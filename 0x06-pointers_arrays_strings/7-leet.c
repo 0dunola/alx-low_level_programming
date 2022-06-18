@@ -6,7 +6,6 @@
 char *leet(char *s)
 {
 	int i, j;
-	char ch;
 	char from[] = {
 		'a', 'e', 'o', 't', 'l',
 		'A', 'E', 'O', 'T', 'L'
@@ -18,11 +17,8 @@ char *leet(char *s)
 
 	for (i = 0; s[i]; i++)
 	{
-		ch = s[i];
-		if (ch >= 'A' && ch <= 'Z')
-			ch += 'a' - 'A';
 		for (j = 0; j < 10; j++)
-			if (ch == from[j])
+			if (s[i] == from[j])
 			{
 				s[i] = to[j];
 				break;
