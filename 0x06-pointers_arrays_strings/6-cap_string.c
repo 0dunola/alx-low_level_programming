@@ -40,13 +40,14 @@ char *cap_string(char *s)
 {
 	int i = 0;
 
+	if (isLowercase(s[i]))
+		s[i] += ('A' - 'a');
+
 	while (s[i] && s[i + 1])
 	{
 		if (isSeparator(s[i]))
-		{
 			if (isLowercase(s[i + 1]))
-				s[++i] += ('A' - 'a');
-		}
+				s[i + 1] += ('A' - 'a');
 		i++;
 	}
 	return (s);
