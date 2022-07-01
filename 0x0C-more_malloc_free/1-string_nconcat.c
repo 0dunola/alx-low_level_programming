@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-/*
+/**
  * string_nconcat - concatenates two strings
  * @s1: base string
  * @s2: string to be concatenated
@@ -36,6 +36,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	for (i = 0; i < l2; i++)
 		ptr[l1 + i] = s2[i];
+
+	ptr[l1 + i] = '\0';
 
 	return (ptr);
 }
