@@ -33,20 +33,17 @@ void is_zero(char *s)
 }
 
 /**
- * is_zero - exits if a number represented
- * as string is zero
+ * print_significant - remove zero from the start of a string
  *
  * @s: given string
  */
-void is_zero(char *s)
+void print_significant(char *s)
 {
-	unsigned int i;
+	int i = 0;
 
-	for (i = 0; s[i]; i++)
-		if (s[i] != '0')
-			return;
-	_print("0");
-	exit(0);
+	while (s[i] == '0' && s[i] != '\0')
+		i++;
+	_print(s + i);
 }
 
 /**
